@@ -14,7 +14,7 @@ int main(void)
 
     thened = "I ran and now I am done!\n";
 
-    cout << "end\n";
+    cout << thened;
 
     return 0;
 }

@@ -17,7 +17,7 @@ public:
     void operator=(const char *str);
     //void operator+(const char *str);
     //pl_string& operator+=(const char *other);
-    //friend ostream& operator<<(ostream& os, const pl_string& obj);
+    friend ostream& operator<<(ostream& os, const pl_string& obj);
 };
 
 #endif

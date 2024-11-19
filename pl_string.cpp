@@ -23,12 +23,12 @@ void pl_string::operator=(const char *str)
     memcpy(_string, str, _curSize);
 }
 
-// ostream& pl_string::operator<<(ostream& os, const pl_string& obj)
-// {
-//     os << obj._string;
-//     return os;
-// }
-//
+ostream& operator<<(ostream& os, const pl_string& obj)
+{
+    os << obj._string;
+    return os;
+}
+
 // void pl_string::operator+(const char *str)
 // {
 //     memcpy(_string + _curSize, str, strlen(str));
