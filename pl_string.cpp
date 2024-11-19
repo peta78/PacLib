@@ -19,15 +19,13 @@ pl_string::~pl_string()
 pl_string& pl_string::operator+(const char *other)
 {
     memcpy(this->_string + strlen(this->_string), other, strlen(other));
-    this->_size += strlen(other);
 
     return *this;
 }
 
 pl_string& pl_string::operator+(const pl_string& other)
 {
-    memcpy(this->_string + strlen(this->_string), other._string, other._size);
-    _size += other._size;
+    memcpy(this->_string + strlen(this->_string), other._string, strlen(other._string));
 
     return *this;
 }
