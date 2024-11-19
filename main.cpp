@@ -8,9 +8,9 @@ int main(void)
     pl_string str1, thened;
 
     str1 = "hello\n";
-    //str1 += " world\n";
+    str1 += " world\n";
 
-    //cout << str1;
+    cout << str1;
 
     thened = "I ran and now I am done!\n";
 
