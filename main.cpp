@@ -7,7 +7,7 @@ int main(void)
 {
     pl_string str1, thened;
 
-    str1 = "hello\n";
+    str1 = "hello";
     str1 += " world\n";
 
     cout << str1;

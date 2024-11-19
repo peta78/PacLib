@@ -9,7 +9,7 @@ using namespace std;
 class pl_string {
 private:
     char *_string;
-    size_t _size, _curSize;
+    size_t _size;
 public:
     pl_string();
     pl_string(const char*&);
