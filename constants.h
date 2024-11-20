@@ -7,7 +7,7 @@
 void debug_fun(const char *message)
 {
 #ifdef DEBUG
-    cout << message << "\n";
+    cout << message << "\n" << std::flush;
 #endif
 }
 
