@@ -7,9 +7,7 @@
 
 pl_string::pl_string()
 {
-    #ifdef DEBUG
-    cout << "x01\n";
-    #endif
+    debug_fun("x01");
 
     _size = PL_SMALL;
     _string = new char[_size];
@@ -18,9 +16,7 @@ pl_string::pl_string()
 
 pl_string::~pl_string()
 {
-    #ifdef DEBUG
-    cout << "x02\n";
-    #endif
+    debug_fun("x02");
 
     delete[] _string;
     _string = NULL;
@@ -29,9 +25,7 @@ pl_string::~pl_string()
 
 pl_string& pl_string::operator+(const char *other)
 {
-    #ifdef DEBUG
-    cout << "x03\n";
-    #endif
+    debug_fun("x03");
 
     pl_string *ret = new pl_string();
 
@@ -42,9 +36,7 @@ pl_string& pl_string::operator+(const char *other)
 
 pl_string& pl_string::operator+(const pl_string& other)
 {
-    #ifdef DEBUG
-    cout << "x04\n";
-    #endif
+    debug_fun("x04");
 
     pl_string *ret = new pl_string();
 
@@ -56,18 +48,14 @@ pl_string& pl_string::operator+(const pl_string& other)
 
 void pl_string::operator=(const char *str)
 {
-    #ifdef DEBUG
-    cout << "x05\n";
-    #endif
+    debug_fun("x05");
 
     memcpy(_string, str, strlen(str));
 }
 
 ostream& operator<<(ostream& os, const pl_string& obj)
 {
-    #ifdef DEBUG
-    cout << "x06\n";
-    #endif
+    debug_fun("x06");
 
     os << obj._string;
 
@@ -76,18 +64,14 @@ ostream& operator<<(ostream& os, const pl_string& obj)
 
 pl_string::pl_string(const char*& obj)
 {
-    #ifdef DEBUG
-    cout << "x07\n";
-    #endif
+    debug_fun("x07");
 
     (*this) = obj;
 }
 
 pl_string& pl_string::operator+=(const pl_string& other)
 {
-    #ifdef DEBUG
-    cout << "x08\n";
-    #endif
+    debug_fun("x08");
 
     memcpy(this->_string + strlen(this->_string), other._string, strlen(other._string));
 
@@ -96,9 +80,7 @@ pl_string& pl_string::operator+=(const pl_string& other)
 
 pl_string& pl_string::operator+=(const char *other)
 {
-    #ifdef DEBUG
-    cout << "x09\n";
-    #endif
+    debug_fun("x09");
 
     memcpy(this->_string + strlen(this->_string), other, strlen(other));
 
