@@ -1,8 +1,8 @@
 #include <cstddef>
 #include <ostream>
 
-#ifndef PLSTRING
-#define PLSTRING
+#ifndef PLSTRINGH
+#define PLSTRINGH
 
 using namespace std;
 
@@ -19,6 +19,7 @@ public:
     pl_string& operator+(const pl_string& other);
     pl_string& operator+(const char *other);
     pl_string& operator+=(const char *other);
+    pl_string& operator+=(const pl_string& other);
     friend ostream& operator<<(ostream& os, const pl_string& obj);
 };
 
