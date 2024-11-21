@@ -5,13 +5,26 @@
 #include "pl_string.h"
 #include "constants.h"
 
-pl_string::pl_string()
+void pl_string::init()
 {
     debug_fun("x01");
 
     _size = PL_SMALL;
     _string = new char[_size];
     memset(_string, 0, _size);
+}
+
+pl_string::pl_string()
+{
+    init();
+}
+
+pl_string::pl_string(pl_string& other)
+{
+    debug_fun("x07");
+
+    init();
+    memcpy(this->_string, other._string, strlen(other._string));
 }
 
 pl_string::~pl_string()
@@ -38,10 +51,13 @@ pl_string& pl_string::operator+(const pl_string& other)
 {
     debug_fun("x04");
 
-    pl_string *ret = new pl_string();
+    pl_string *ret = new pl_string(*this);
 
-    *ret = *this;
-    ret->operator+=(other);
+    cout << *this << "\n";
+
+    *ret += other;
+
+    cout << *this << "\n";
 
     return *ret;
 }
@@ -60,13 +76,6 @@ ostream& operator<<(ostream& os, const pl_string& obj)
     os << obj._string;
 
     return os;
-}
-
-pl_string::pl_string(const char*& obj)
-{
-    debug_fun("x07");
-
-    (*this) = obj;
 }
 
 pl_string& pl_string::operator+=(const pl_string& other)

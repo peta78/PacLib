@@ -10,9 +10,11 @@ class pl_string {
 private:
     char *_string;
     size_t _size;
+
+    void init();
 public:
     pl_string();
-    pl_string(const char*&);
+    pl_string(pl_string& other);
     ~pl_string();
 
     void operator=(const char *str);
