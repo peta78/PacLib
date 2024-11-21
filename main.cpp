@@ -6,7 +6,7 @@ using namespace std;
 
 int main(void)
 {
-    pl_string str1, thened;
+    pl_string str1, theend;
 
     str1 = "hello";
     str1 += " world\n";
@@ -31,9 +31,9 @@ int main(void)
     cout << q2 << "\n";
     cout << q3 << "\n";
 
-    thened = "I ran and now I am done!\n";
+    theend = "I ran and now I am done!\n";
 
-    cout << thened;
+    cout << theend;
 
     return 0;
 }

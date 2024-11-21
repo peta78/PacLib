@@ -5,9 +5,13 @@
 #include "pl_string.h"
 #include "constants.h"
 
+static int numAllocs = 0;
+static int numDeallocs = 0;
+
 void pl_string::init()
 {
     debug_fun("x01");
+    numAllocs++;
 
     _size = PL_SMALL;
     _string = new char[_size];
@@ -34,6 +38,9 @@ pl_string::~pl_string()
     delete[] _string;
     _string = NULL;
     _size = 0;
+
+    numDeallocs++;
+    cout << numDeallocs << " out of " << numAllocs << "\n";
 }
 
 pl_string& pl_string::operator+(const char *other)
