@@ -15,6 +15,7 @@ private:
 public:
     pl_string();
     pl_string(pl_string& other);
+    pl_string(const char* other);
     ~pl_string();
 
     void operator=(const char *str);
