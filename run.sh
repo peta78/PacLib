@@ -1,4 +1,7 @@
 rm main
 clear
-g++ *.cpp -o main
-./main
+g++ -g *.cpp -o main
+
+#./main
+
+valgrind --leak-check=full ./main
