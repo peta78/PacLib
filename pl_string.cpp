@@ -35,6 +35,11 @@ pl_string::pl_string(const char* other)
     memcpy(_string, other, strlen(other));
 }
 
+pl_string::pl_string(const char* x1, const char* x2)
+{
+
+}
+
 pl_string::~pl_string()
 {
     debug_fun("x12");
@@ -42,27 +47,6 @@ pl_string::~pl_string()
     delete[] _string;
     _string = NULL;
     _size = 0;
-}
-
-pl_string& pl_string::operator+(const char *other)
-{
-    debug_fun("x03");
-
-    pl_string *ret = new pl_string();
-
-    *ret = *this + other;
-
-    return *ret;
-}
-
-pl_string& pl_string::operator+(const pl_string& other)
-{
-    debug_fun("x04");
-
-    pl_string *ret = new pl_string(*this);
-    *ret += other;
-
-    return *ret;
 }
 
 pl_string& pl_string::operator=(const char *str)
@@ -90,6 +74,11 @@ ostream& operator<<(ostream& os, const pl_string& obj)
     os << obj._string;
 
     return os;
+}
+
+pl_string pl_string::operator+(pl_string &x1) const
+{
+    return pl_string(this->_string, x1._string);
 }
 
 pl_string& pl_string::operator+=(const pl_string& other)
