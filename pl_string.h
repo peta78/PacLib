@@ -18,11 +18,15 @@ public:
     pl_string(const char* other);
     ~pl_string();
 
-    void operator=(const char *str);
     pl_string& operator+(const pl_string& other);
     pl_string& operator+(const char *other);
+
     pl_string& operator+=(const char *other);
     pl_string& operator+=(const pl_string& other);
+
+    pl_string& operator=(const char *str);
+    pl_string& operator=(pl_string &other);
+
     friend ostream& operator<<(ostream& os, const pl_string& obj);
 };
 

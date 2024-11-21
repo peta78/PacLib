@@ -20,7 +20,7 @@ int main(void)
 
     cout << "------\n";
 
-    q3 = q1;// q1 + q2;
+    q3 = q1 + q2;
 
     cout << "------\n";
 

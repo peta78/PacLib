@@ -65,11 +65,22 @@ pl_string& pl_string::operator+(const pl_string& other)
     return *ret;
 }
 
-void pl_string::operator=(const char *str)
+pl_string& pl_string::operator=(const char *str)
 {
     debug_fun("x05");
 
     memcpy(_string, str, strlen(str));
+
+    return *this;
+}
+
+pl_string& pl_string::operator=(pl_string &other)
+{
+    debug_fun("x05b");
+
+    memcpy(_string, other._string, strlen(other._string));
+
+    return *this;
 }
 
 ostream& operator<<(ostream& os, const pl_string& obj)
