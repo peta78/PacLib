@@ -33,8 +33,6 @@ pl_string::pl_string(pl_string& other)
 
 pl_string::~pl_string()
 {
-    debug_fun("x02");
-
     delete[] _string;
     _string = NULL;
     _size = 0;
@@ -59,12 +57,7 @@ pl_string& pl_string::operator+(const pl_string& other)
     debug_fun("x04");
 
     pl_string *ret = new pl_string(*this);
-
-    cout << *this << "\n";
-
     *ret += other;
-
-    cout << *this << "\n";
 
     return *ret;
 }

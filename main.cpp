@@ -16,16 +16,8 @@ int main(void)
     pl_string q1,q2,q3;
 
     q1 = "a";
-
-    cout << "---\n";
-
     q2 = "b";
-
-    cout << "---\n";
-
     q3 = q1 + q2;
-
-    cout << "---\n";
 
     cout << q1 << "\n";
     cout << q2 << "\n";
