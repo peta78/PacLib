@@ -14,6 +14,8 @@ void pl_string::init()
 
 pl_string::pl_string()
 {
+    debug_fun("x10");
+
     init();
 }
 
@@ -27,12 +29,16 @@ pl_string::pl_string(pl_string& other)
 
 pl_string::pl_string(const char* other)
 {
+    debug_fun("x11");
+
     init();
     memcpy(_string, other, strlen(other));
 }
 
 pl_string::~pl_string()
 {
+    debug_fun("x12");
+
     delete[] _string;
     _string = NULL;
     _size = 0;

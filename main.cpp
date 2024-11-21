@@ -13,15 +13,20 @@ int main(void)
 
     cout << str1;
 
-    /*pl_string q1,q2,q3;
+    pl_string q1,q2,q3;
 
     q1 = "a";
     q2 = "b";
-    q3 = q1 + q2;
+
+    cout << "------\n";
+
+    q3 = q1;// q1 + q2;
+
+    cout << "------\n";
 
     cout << q1 << "\n";
     cout << q2 << "\n";
-    cout << q3 << "\n";*/
+    cout << q3 << "\n";
 
     pl_string theend = "I ran and now I am done!\n";
     cout << theend;
